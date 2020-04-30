@@ -70,7 +70,7 @@ def main():
     print("reading data from %d files" % (len(files),))
     for f in files:
         dat = open(f, 'rb').read()
-        datstr = ''.join('%02X' % ord(x) for x in dat)
+        datstr = ''.join(['%02X' % x for x in dat])
         data[f.split('/')[1].split('.')[0]] = datstr
 
     print("read a total of %d nibbles from %d files" % (sum(len(x) for x in data.values()), len(files)))
